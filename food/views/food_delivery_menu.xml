@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <record id="food_delivery_action" model="ir.actions.act_window">
+        <field name="name">Food Delivery</field>
+        <field name="res_model">food.delivery</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="food_delivery_menu_root" name="Food Delivery">
+        <menuitem id="vegitarian_menu" action="food_delivery_action"  name="Vegitarian"></menuitem>
+        <menuitem id="non_vegitarian_menu"  action="food_delivery_action" name="Non Vegitarian"></menuitem>
+    </menuitem>
+</odoo>
