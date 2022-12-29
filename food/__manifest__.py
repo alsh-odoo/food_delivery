@@ -9,6 +9,10 @@
     'data':[
          'security/ir.model.access.csv',
          'views/food_delivery_menu.xml',
+         'views/food_delivery_view.xml',
+    ],
+    'demo':[
+        'demo/user_demo_data.xml'
     ],
     'application' : True,
     

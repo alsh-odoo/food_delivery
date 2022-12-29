@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- _________________________Food Delivery Customer Tree View ___________________________-->
+    <record id="food_delivery_tree_view" model="ir.ui.view">
+        <field name="name">Food Delivery Tree View</field>
+        <field name="model">food.delivery</field>
+        <field name="arch" type="xml">
+            <tree string="Tree View" expand="1">
+                <field name="name"/>
+                <field name="email" optional="hide"/>
+                <field name="mobile_number"/>
+                <field name="city"/>
+                <field name="food_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- _______________________Food Delivery Form View_____________________________________ -->
+    <record id="food_delivery_form_view" model="ir.ui.view">
+        <field name="name">Food Delivery Form View</field>
+        <field name="model">food.delivery</field>
+        <field name="arch" type="xml">
+            <form string="Form View">
+                <sheet style="border-radus:10px">
+                    <label for="name"></label>
+                    <h1><field name="name"></field></h1>
+                    <group style="margin-top:10px">
+                        <group style="margin-top:10px">
+                            <field name="email"/>
+                            <field name="mobile_number"/>
+                        </group>
+                        <group style="margin-top:10px">
+                            <field name="food_type"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Address">
+                            <group>
+                                <field name="pincode"/>
+                                <field name="city"/>
+                                <field name="state"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- _________________________________Food Delivery Search View____________________________ -->
+    <record id="food_delivery_search_view" model="ir.ui.view">
+        <field name="name">Food Delivery search View</field>
+        <field name="model">food.delivery</field>
+        <field name="arch" type="xml">
+            <search string="Food delivery">
+                <field  name="name"  filter_domain="[('name','ilike',self)]" string="Name" />
+                <field  name="pincode" filter_domain="[('pincode','ilike',self)]" string="Pincode"/>
+                <field  name="city"/>
+                <field  name="state"/>
+                <field  name="email"/>
+                <!-- <filter name="filter_state" string="State" context="[('state','=',gujarat)]"/> -->
+                <group expand="1" string="Group By">
+                    <filter  string="State" name="state" context="{'group_by':'state'}"></filter>
+                    <filter  string="City" name="city" context="{'group_by':'city'}"></filter>
+                    <filter  string="Pin Code" name="pincode" context="{'group_by':'pincode'}"></filter>
+                </group>
+
+            </search>
+        </field>
+    </record>
+
+</odoo>

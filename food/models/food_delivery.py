@@ -7,17 +7,23 @@ class foodDelivery(models.Model):
     _description="This is a description of food delivery in our local area"
 
     name=fields.Char("Name",required=True)
-    date=fields.Date.to_date(self._context.get('date_from'))
+    email=fields.Char(string="Email",required=True)
+    mobile_number=fields.Char(string="Mobile Number")
+    # datetime = fields.Datetime.now('datetime')
     city=fields.Char("City")
-    pincode=fields.Integer("Pincode")
+    pincode=fields.Char("Pincode")
     state=fields.Char("State")
-    restaurant_name=fields.Char("Restaurant Name")
     food_type=fields.Selection(
-        string="Veg/Non-Veg",selection=[('vegitarian','Vegitarian'),('non_vegitarian','Non Vegitarian')]
+        string="preffered food",
+        selection=[('vegitarian','Pure Veg'),('non_vegitarian','Veg & Non veg')]
     )
-    delivery_type=fields.Selection(
-        string="Delivery/Takeaway",
-        selection=[('delivery','Delivery'),('take_away','Take Away')]
-    )
+    # delivery_type=fields.Selection(
+    #     string="Delivery/Takeaway",
+    #     selection=[('delivery','Delivery'),('take_away','Take Away')]
+    # )
+    
+    # status = fields.Selection( 
+    #     string='Status', 
+    # selection = [('new', 'New'),('in_progress', 'In Progress'),('cancel', 'Cancelled'),('done', 'Done')])
 
 

@@ -2,7 +2,7 @@
 
 <odoo>
     <record id="food_delivery_action" model="ir.actions.act_window">
-        <field name="name">Food Delivery</field>
+        <field name="name">User Details</field>
         <field name="res_model">food.delivery</field>
         <field name="view_mode">tree,form</field>
     </record>
