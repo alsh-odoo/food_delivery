@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 food.access_food_delivery,access_food_delivery,food.model_food_delivery,base.group_user,1,1,1,1
+food.access_restaurant_name,access_restaurant_name,food.model_restaurant_name,base.group_user,1,1,1,1
