@@ -5,6 +5,7 @@ from odoo import models,fields
 class restaurant(models.Model):
     _name="restaurant.name"
     _description="This module is about the names of restaurants"
+    _order = "name"
 
 
     name=fields.Char(required=True)
@@ -13,5 +14,5 @@ class restaurant(models.Model):
     state=fields.Char()
     restaurant_type=fields.Selection(
         string="Restaurant Type",
-        selection="[('pure_veg','Pure Veg'),('veg_non_veg','Veg&Nonveg')]"
+        selection=[('pure_veg','Pure Veg'),('veg_non_veg','Veg&Nonveg')]
     )
