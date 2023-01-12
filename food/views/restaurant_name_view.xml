@@ -31,6 +31,16 @@
                             <field name="restaurant_type"/>
                             <field name="state"/>
                         </group>
+                        <notebook>
+                            <page string="Menu Items">
+                                <field name="restaurant__menu_ids">
+                                    <tree>
+                                        <field name="item_name"/>
+                                        <field name="price"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
                     </group>
                 </sheet>
             </form>

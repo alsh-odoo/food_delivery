@@ -9,10 +9,8 @@ class foodDelivery(models.Model):
 
 
     name=fields.Char("Name",required=True)
-    email=fields.Char(string="Email",required=True)
-    mobile_number=fields.Char(string="Mobile Number")
     datetime = fields.Datetime.now('datetime')
-    address = fields.Char("House-No/Street")
+    house_no = fields.Char("House-No/Street")
     city=fields.Char("City")
     pincode=fields.Char("Pincode")
     state=fields.Char("State")
@@ -20,7 +18,16 @@ class foodDelivery(models.Model):
         string="Preffered Food",
         selection=[('vegitarian','Pure Veg'),('non_vegitarian','Veg & Non veg')]
     )
+    # state=fields.Selection(
+    #     string="State",
+    #     selection=[('new','New','preparing_food','Preparing Food')]
+    # )
+
     restaurant_name_id = fields.Many2one('restaurant.name',string="Restaurant Name")
+    menu_item_ids = fields.One2many('restaurant.menu.items','food_delivery_id')
+
+    user_details_ids=fields.One2many('user.details','customer_details_id')
+    delivery_boy_id=fields.Many2one('res.users',string="Delivery Boy")
     # delivery_type=fields.Selection(
     #     string="Delivery/Takeaway",
     #     selection=[('delivery','Delivery'),('take_away','Take Away')]

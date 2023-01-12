@@ -7,8 +7,6 @@
         <field name="arch" type="xml">
             <tree string="Tree View" expand="1">
                 <field name="name"/>
-                <field name="email" optional="hide"/>
-                <field name="mobile_number"/>
                 <field name="city"/>
                 <field name="food_type"/>
             </tree>
@@ -21,27 +19,44 @@
         <field name="model">food.delivery</field>
         <field name="arch" type="xml">
             <form string="Form View">
-                <sheet style="border-radus:10px">
+                <sheet>
                     <label for="name"></label>
                     <h1><field name="name"></field></h1>
-                    <group style="margin-top:10px">
-                        <group style="margin-top:10px">
-                            <field name="email"/>
-                            <field name="mobile_number"/>
-                        </group>
-                        <group style="margin-top:10px">
-                            <field  name="restaurant_name_id" options="{'no_create':'True','no_edit':'True'}"/>
+                    <group>
+                        <group>
                             <field name="food_type"/>
+                        </group>
+                        <group>
+                            <field  name="restaurant_name_id" options="{'no_create':'True','no_edit':'True'}"/>
                         </group>
                     </group>
                     <notebook>
                         <page string="Address">
                             <group>
-                                <field name="address"/>
+                                <field name="house_no"/>
                                 <field name="pincode"/>
                                 <field name="city"/>
                                 <field name="state"/>
                             </group>
+                        </page>
+                        <page string="Customer Details">
+                                <field name="user_details_ids">
+                                    <tree editable="1">
+                                        <field name="mobile_number"/>
+                                        <field name="email"/>
+                                    </tree>
+                                </field>
+                        </page>
+                        <page string="Delivery Deails">
+                            <group>
+                                <field name="delivery_boy_id" widget="many2one_avatar"/>
+                            </group>
+                        </page>
+                        <page>
+                            <field name="menu_item_ids">
+                                
+
+                            </field>
                         </page>
                     </notebook>
                 </sheet>
@@ -59,7 +74,6 @@
                 <field  name="pincode" filter_domain="[('pincode','ilike',self)]" string="Pincode"/>
                 <field  name="city"/>
                 <field  name="state"/>
-                <field  name="email"/>
                 <!-- <filter name="filter_state" string="State" context="[('state','=',gujarat)]"/> -->
                 <group expand="1" string="Group By">
                     <filter  string="State" name="state" context="{'group_by':'state'}"></filter>

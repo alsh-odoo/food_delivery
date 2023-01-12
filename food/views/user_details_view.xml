@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="user_details_form_view" model="ir.ui.view">
+        <field name="name">User details Form View</field>
+        <field name="model">user.details</field>
+        <field name="arch" type="xml">
+            <form string="Form View">
+                <sheet>
+                    <group>
+                        <field name="email"/>
+                        <field name="mobile_number"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+</odoo>
