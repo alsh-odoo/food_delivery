@@ -3,3 +3,4 @@ food.access_food_delivery,access_food_delivery,food.model_food_delivery,base.gro
 food.access_restaurant_name,access_restaurant_name,food.model_restaurant_name,base.group_user,1,1,1,1
 food.access_user_details,access_user_details,food.model_user_details,base.group_user,1,1,1,1
 food.access_restaurant_menu_items,access_restaurant_menu_items,food.model_restaurant_menu_items,base.group_user,1,1,1,1
+food.access_cusine_style,access_cusine_style,food.model_cusine_style,base.group_user,1,1,1,1

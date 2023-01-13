@@ -34,7 +34,7 @@
                         <notebook>
                             <page string="Menu Items">
                                 <field name="restaurant__menu_ids">
-                                    <tree>
+                                    <tree editable="1">
                                         <field name="item_name"/>
                                         <field name="price"/>
                                     </tree>

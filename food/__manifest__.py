@@ -5,6 +5,7 @@
     'version' :'',
     'author':'Althaf Shaik',
     'category':'Advertising',
+    'depends':['mail',],
     'data':[
          'security/ir.model.access.csv',
          'views/food_delivery_menu.xml',

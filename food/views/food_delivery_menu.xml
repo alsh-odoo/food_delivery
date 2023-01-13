@@ -11,10 +11,15 @@
         <field name="res_model">restaurant.name</field>
         <field name = "view_mode">tree,form</field>
     </record>
+    <record id="cusine_style_action" model="ir.actions.act_window">
+        <field name="name">Cusine Style</field>
+        <field name="res_model">cusine.style</field>
+        <field name="view_mode">list,form</field>
+    </record>
 
     <menuitem id="food_delivery_menu_root" name="Food Delivery">
-        <menuitem id="order_food" action="food_delivery_action"  name="Order Food"></menuitem>
-        <!-- <menuitem id="non_vegitarian_menu"  action="food_delivery_action" name="Non Vegitarian"></menuitem> -->
-        <menuitem id="restaurant_name_menu" action="restaurant_name_action" name="Restaurants"></menuitem>
+        <menuitem id="order_food_menu" action="food_delivery_action" name="Order Food" sequence="1"></menuitem>
+        <menuitem id="restaurant_name_menu" action="restaurant_name_action" name="Restaurants" sequence="2"></menuitem>
+        <menuitem id="cusine_style_menu" action="cusine_style_action" name="Cusine Types" sequence="3"></menuitem>
     </menuitem>
 </odoo>

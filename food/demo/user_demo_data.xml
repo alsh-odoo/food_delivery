@@ -3,26 +3,26 @@
     <data>
         <record id="Shyaam_demo_data" model="food.delivery">
             <field name="name">Shyaam</field>
-            <!-- <field name="email">sham@odoo.com</field> -->
             <field name="city">Vadodara</field>
             <field name="state">Gujarat</field>
-            <!-- <field name="mobile_number">9182736450</field> -->
         </record>
         <record id="mohit_demo_data" model="food.delivery">
             <field name="name">Mohit</field>
-            <!-- <field name="email">mhit@odoo.com</field> -->
             <field name="city">Porbandar</field>
             <field name="state">Gujarat</field>
-            <!-- <field name="mobile_number">9128374650</field> -->
             <field name="food_type">vegitarian</field>
         </record>
         <record id="Aditya_demo_data" model="food.delivery">
             <field name="name">Aditya</field>
-            <!-- <field name="email">adya@odoo.com</field> -->
             <field name="city">Surat</field>
             <field name="state">Gujarat</field>
-            <!-- <field name="mobile_number">9137465290</field> -->
             <field name="food_type">non_vegitarian</field>
+        </record>
+        <record id="north_indian_cusine_demo_data" model="cusine.style">
+            <field name="name">North Indian</field>
+        </record>
+        <record id="south_indian_cusine_demo_data" model="cusine.style">
+            <field name="name">South Indian</field>
         </record>
     </data>
 </odoo>
