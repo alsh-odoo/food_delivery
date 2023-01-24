@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="restaurant_demo_data_1" model="restaurant.name">
+            <field name="name">Balaji Restaurant</field>
+            <field name="city">Gandhinagar</field>
+        </record>
+        <record id="restaurant_demo_data_2" model="restaurant.name">
+            <field name="name">Hocco The Esatern,Infocity</field>
+            <field name="city">Gandhinagar,Giftcity</field>
+        </record>
+        <record id="restaurant_demo_data_3" model="restaurant.name">
+            <field name="name">J.p sandwich and pizza</field>
+            <field name="city">Gandhinagar,Infocity</field>
+        </record>
+    </data>
+</odoo>

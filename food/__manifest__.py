@@ -14,7 +14,8 @@
          'views/user_details_view.xml',
     ],
     'demo':[
-        'demo/user_demo_data.xml'
+        'demo/user_demo_data.xml',
+        'demo/restaurant_demo_data.xml',
     ],
     'application' : True,
     

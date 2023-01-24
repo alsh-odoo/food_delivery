@@ -4,7 +4,7 @@ from odoo import models,fields
 
 class foodDelivery(models.Model):
     _name="food.delivery"
-    _description="This is a description of food delivery in our local area"
+    _description="This model is used to create a food order in our local city"
     _inherit= ['mail.thread','mail.activity.mixin']
     _order = "name"
 
