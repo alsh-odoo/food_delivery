@@ -16,6 +16,7 @@
     'demo':[
         'demo/user_demo_data.xml',
         'demo/restaurant_demo_data.xml',
+        'demo/menu_items_demo.xml',
     ],
     'application' : True,
     

@@ -22,8 +22,8 @@ class foodDelivery(models.Model):
         string="Statusbar",
         selection=[('new','New'),('preparing_food','Preparing Food'),('dispatched','Dispatched'),('cancel','Cancelled')],default="new",tracking=True)
     restaurant_name_id = fields.Many2one('restaurant.name',string="Restaurant Name")
-    menu_item_ids = fields.One2many('restaurant.menu.items','food_delivery_id')
-    cusine_style_ids=fields.Many2many('cusine.style',string="Cusine Style")
+    menu_item_ids = fields.Many2one('restaurant.menu.items',string="Food Menu")
+    cusine_style_ids=fields.Many2one('cusine.style',string="Cusine Style")
     user_details_ids=fields.One2many('user.details','customer_details_id')
     delivery_boy_id=fields.Many2one('res.users',string="Delivery Boy")
 

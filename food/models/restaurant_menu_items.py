@@ -8,4 +8,3 @@ class menuItems(models.Model):
     item_name=fields.Char("Item Name",required=True)
     price = fields.Float("Price",required=True)
     menu_item_id=fields.Many2one('restaurant.name')
-    food_delivery_id = fields.Many2one('food.delivery')
