@@ -16,5 +16,5 @@ class restaurant(models.Model):
         string="Restaurant Type",
         selection=[('pure_veg','Pure Veg'),('veg_non_veg','Veg&Nonveg')]
     )
-    restaurant__menu_ids=fields.One2many('restaurant.menu.items','menu_item_id',string="Menu Items")
+    restaurant_menu_ids=fields.One2many('food.product','restaurant_id',string="Menu Items")
     

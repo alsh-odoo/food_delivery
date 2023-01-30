@@ -33,9 +33,9 @@
                         </group>
                         <notebook>
                             <page string="Menu Items">
-                                <field name="restaurant__menu_ids">
+                                <field name="restaurant_menu_ids">
                                     <tree editable="1">
-                                        <field name="item_name"/>
+                                        <field name="name"/>
                                         <field name="price"/>
                                     </tree>
                                 </field>

@@ -16,10 +16,15 @@
         <field name="res_model">cusine.style</field>
         <field name="view_mode">list,form</field>
     </record>
-
+    <record id="food_product_action" model="ir.actions.act_window">
+        <field name="name">food product</field>
+        <field name="res_model">food.product</field>
+        <field name="view_mode">list,form</field>
+    </record>
     <menuitem id="food_delivery_menu_root" name="Food Delivery">
         <menuitem id="order_food_menu" action="food_delivery_action" name="Order Food" sequence="1"></menuitem>
         <menuitem id="restaurant_name_menu" action="restaurant_name_action" name="Restaurants" sequence="2"></menuitem>
+        <menuitem id="food_product_menu" action="food_product_action" name="Food Product" sequence="4"></menuitem>
         <menuitem id="cusine_style_menu" action="cusine_style_action" name="Cusine Types" sequence="3"></menuitem>
     </menuitem>
 </odoo>

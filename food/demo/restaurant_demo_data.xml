@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
         <record id="restaurant_demo_data_1" model="restaurant.name">
@@ -14,4 +14,4 @@
             <field name="city">Gandhinagar,Infocity</field>
         </record>
     </data>
-</odoo>
+</odoo> -->

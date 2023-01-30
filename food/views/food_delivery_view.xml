@@ -6,7 +6,7 @@
         <field name="model">food.delivery</field>
         <field name="arch" type="xml">
             <tree string="Tree View" expand="1">
-                <field name="name"/>
+                <field name="date"/>
                 <field name="city"/>
                 <field name="food_type"/>
             </tree>
@@ -24,8 +24,8 @@
                     <field name="state" widget="statusbar" options="{'clickable': '1'}"></field>
                 </header>
                 <sheet>
-                    <label for="name"></label>
-                    <h1><field name="name"></field></h1>
+                    <!-- <label for="name"></label>
+                    <h1><field name="name"></field></h1> -->
                     <group>
                         <group>
                             <field name="food_type"/>
@@ -36,14 +36,6 @@
                         </group>
                     </group>
                     <notebook>
-                        <page string="Customer Details">
-                            <field name="user_details_ids">
-                                <tree editable="1">
-                                    <field name="mobile_number"/>
-                                    <field name="email"/>
-                                </tree>
-                            </field>
-                        </page>
                         <page string="Address">
                             <group>
                                 <field name="house_no"/>
@@ -60,7 +52,12 @@
                         </page>
                         <page string="Menu Items">
                             <group>
-                                <field name="menu_item_ids" widget="menu_item_ids" options="{'no_create':'True','no_edit':'True'}" attrs="{'invisible':[('cusine_style_ids','=',False)]}"></field>
+                                <field name="menu_item_ids" widget="many2many_checkbox">
+                                    <tree>
+                                        <field name="name"></field>
+                                        <field name="price"></field>
+                                    </tree>
+                                </field>
                             </group>
                         </page>
                     </notebook>

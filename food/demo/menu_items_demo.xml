@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
         <record id="punjabi_thali_demo" model="restaurant.menu.items">
@@ -13,10 +13,10 @@
             <field name="item_name">Chole Bhature</field>
             <field name="price">100</field>
         </record>
-        <record id="menu_item_demo_data_4" model="restaurant.menu.items">
+        <record id="jeera_rice_demo" model="restaurant.menu.items">
             <field name="item_name">jeera rice and dal</field>
             <field name="price">70</field>
         </record>
 
     </data>
-</odoo>
+</odoo> -->

@@ -1,6 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 food.access_food_delivery,access_food_delivery,food.model_food_delivery,base.group_user,1,1,1,1
 food.access_restaurant_name,access_restaurant_name,food.model_restaurant_name,base.group_user,1,1,1,1
-food.access_user_details,access_user_details,food.model_user_details,base.group_user,1,1,1,1
-food.access_restaurant_menu_items,access_restaurant_menu_items,food.model_restaurant_menu_items,base.group_user,1,1,1,1
 food.access_cusine_style,access_cusine_style,food.model_cusine_style,base.group_user,1,1,1,1
+food.access_food_product,access_food_product,food.model_food_product,base.group_user,1,1,1,1
+food.access_food_product_category,access_food_product_category,food.model_food_product_category,base.group_user,1,1,1,1

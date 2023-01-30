@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="food_product_tree_view" model="ir.ui.view">
+            <field name="name">Food Product Tree View</field>
+            <field name="model">food.product</field>
+            <field name="arch" type="xml">
+                <tree string="Tree View">
+                    <field name="name"/>
+                    <field name="product_categroy_id"/>
+                    <field name="restaurant_id"/>
+                    <field name="price" widget="monetary"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

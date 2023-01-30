@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
         <record id="Shyaam_demo_data" model="food.delivery">
@@ -25,4 +25,4 @@
             <field name="name">Chinese</field>
         </record>
     </data>
-</odoo>
+</odoo> -->
