@@ -13,5 +13,32 @@
                 </tree>
             </field>
         </record>
+
+        <record id="food_product_form_view" model="ir.ui.view">
+            <field name="name">food product form view</field>
+            <field name="model">food.product</field>
+            <field name="arch" type="xml">
+                <form string="food prodduct form">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"></label>
+                            <h1><field name="name"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="price"/>
+                                <field name="restaurant_id"/>
+                            </group>
+                            <group>
+                                <field name="product_categroy_id"/>
+                            </group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
     </data>
 </odoo>

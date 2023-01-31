@@ -21,10 +21,18 @@
         <field name="res_model">food.product</field>
         <field name="view_mode">list,form</field>
     </record>
-    <menuitem id="food_delivery_menu_root" name="Food Delivery">
+    <record id="food_product_category_action" model="ir.actions.act_window">
+        <field name="name">Food Product Category</field>
+        <field name="res_model">food.product.category</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <menuitem id="food_delivery_menu_root" name="Food Delivery" web_icon="food,static/description/icon.png">
         <menuitem id="order_food_menu" action="food_delivery_action" name="Order Food" sequence="1"></menuitem>
         <menuitem id="restaurant_name_menu" action="restaurant_name_action" name="Restaurants" sequence="2"></menuitem>
-        <menuitem id="food_product_menu" action="food_product_action" name="Food Product" sequence="4"></menuitem>
-        <menuitem id="cusine_style_menu" action="cusine_style_action" name="Cusine Types" sequence="3"></menuitem>
+        <menuitem id="setting_menu" name="Settings">
+            <menuitem id="food_product_category_menu" action="food_product_category_action"></menuitem>
+            <menuitem id="food_product_menu" action="food_product_action" name="Food Product" sequence="1"></menuitem>
+            <menuitem id="cusine_style_menu" action="cusine_style_action" name="Cusine Types" sequence="3"></menuitem>
+        </menuitem>
     </menuitem>
 </odoo>

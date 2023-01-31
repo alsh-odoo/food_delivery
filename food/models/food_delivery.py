@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models,fields
+from odoo import models,fields,api,_
+from odoo.exceptions import UserError, ValidationError
 
 class foodDelivery(models.Model):
     _name="food.delivery"
@@ -20,15 +21,28 @@ class foodDelivery(models.Model):
     )
     state=fields.Selection(
         string="Statusbar",
-        selection=[('new','New'),('preparing_food','Preparing Food'),('dispatched','Dispatched'),('cancel','Cancelled')],default="new",tracking=True)
+        selection=[('new','New'),('order_created','Order Created'),('order_recieved','Ordered Recieved'),('cancel','Cancelled')],default="new",tracking=True)
     restaurant_name_id = fields.Many2one('restaurant.name',string="Restaurant Name")
     menu_item_ids = fields.Many2many('food.product', string="Food Menu")
     cusine_style_ids=fields.Many2one('cusine.style',string="Cusine Style")
+    # product_category_id=fields.Many2one('food.product.category',related=".name",string="Food Category")
     # user_details_ids=fields.One2many('user.details','customer_details_id')
     delivery_boy_id=fields.Many2one('res.users',string="Delivery Boy",default=lambda self:self.env.user)
 
-    # #constraints
-    # _sql_constraints=[('check_')]
+    def order_action(self):
+        for record in self:
+            if record.state=="cancel":
+                raise UserError(_("Cancelled-oreder cannot be Re-ordere "))
+            else:
+                record.state="order_recieved"
+        return True
+    def cancel_action(self):
+        for record in self:
+            if record.state=="order_recieved":
+                raise UserError("order cannot be cancelled")
+            else:
+                record.state="cancel"
+        return True
 
 
 

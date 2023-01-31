@@ -20,12 +20,13 @@
         <field name="arch" type="xml">
             <form string="Form View">
                 <header>
-                    <button></button>
+                    <button name="order_action" type="object" string="Order" class="oe_highlight" attrs="{'invisible':[('state','in',['order_recieved','cancel'])]}"></button>
+                    <button name="cancel_action" type="object" string="Cancel" class="oe_highlight" attrs="{'invisible':[('state','in',['order_recieved','cancel'])]}"></button>
                     <field name="state" widget="statusbar" options="{'clickable': '1'}"></field>
                 </header>
                 <sheet>
-                    <!-- <label for="name"></label>
-                    <h1><field name="name"></field></h1> -->
+                    <widget name="web_ribbon" title="Ordered" bg_colour="bg-success" attrs="{'invisible':[('state','in',['new','order_created','cancel'])]}"></widget>
+                    <widget name="web_ribbon" title="Cancelled" bg_colour="bg-danger" attrs="{'invisible':[('state','in',['new','order_created','order_recieved'])]}"></widget>
                     <group>
                         <group>
                             <field name="food_type"/>

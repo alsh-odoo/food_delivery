@@ -12,7 +12,6 @@
          'views/food_delivery_view.xml',
          'views/food_product_view.xml',
          'views/restaurant_name_view.xml',
-         
         #  'views/user_details_view.xml',
     ],
     # 'demo':[
