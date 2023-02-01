@@ -5,10 +5,12 @@
         <field name="name">Food Delivery Tree View</field>
         <field name="model">food.delivery</field>
         <field name="arch" type="xml">
-            <tree string="Tree View" expand="1">
+            <tree string="Tree View" expand="1" decoration-success="state=='order_recieved'" decoration-danger="state=='cancel'">
                 <field name="date"/>
                 <field name="city"/>
+                <field name="cusine_style_ids" widget="many2many_tags" options="{'color_field':'color'}"/>
                 <field name="food_type"/>
+                <field name="state" optional="hide"/>
             </tree>
         </field>
     </record>
@@ -25,12 +27,12 @@
                     <field name="state" widget="statusbar" options="{'clickable': '1'}"></field>
                 </header>
                 <sheet>
-                    <widget name="web_ribbon" title="Ordered" bg_colour="bg-success" attrs="{'invisible':[('state','in',['new','order_created','cancel'])]}"></widget>
-                    <widget name="web_ribbon" title="Cancelled" bg_colour="bg-danger" attrs="{'invisible':[('state','in',['new','order_created','order_recieved'])]}"></widget>
+                    <widget name="web_ribbon" title="Ordered" bg_color="bg-success" attrs="{'invisible':[('state','in',['new','order_created','cancel'])]}"></widget>
+                    <widget name="web_ribbon" title="Cancelled" bg_color="bg-danger" attrs="{'invisible':[('state','in',['new','order_created','order_recieved'])]}"></widget>
                     <group>
                         <group>
                             <field name="food_type"/>
-                            <field name="cusine_style_ids" options="{'no_create':'True','no_edit':'True'}"/>
+                            <field name="cusine_style_ids" widget="many2many_tags" options="{'no_create':'True','no_edit':'True','color_field':'color'}"/>
                         </group>
                         <group>
                             <field  name="restaurant_name_id" options="{'no_create':'True','no_edit':'True'}"/>
@@ -53,7 +55,7 @@
                         </page>
                         <page string="Menu Items">
                             <group>
-                                <field name="menu_item_ids" widget="many2many_checkbox">
+                                <field name="menu_item_ids" widget="many2many_checkbox" attrs="{'readonly' : [('state','in',['order_recieved','cancel'])]}">
                                     <tree>
                                         <field name="name"></field>
                                         <field name="price"></field>
@@ -82,7 +84,7 @@
                 <field  name="pincode" filter_domain="[('pincode','ilike',self)]" string="Pincode"/>
                 <field  name="city"/>
                 <field  name="state"/>
-                <!-- <filter name="filter_state" string="State" context="[('state','=',gujarat)]"/> -->
+                <filter string="avilable" name="avilable_filter" domain="[('state','in',['new','order_recieved'])]"></filter>
                 <group expand="1" string="Group By">
                     <filter  string="State" name="state" context="{'group_by':'state'}"></filter>
                     <filter  string="City" name="city" context="{'group_by':'city'}"></filter>

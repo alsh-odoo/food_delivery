@@ -7,7 +7,7 @@ class foodDelivery(models.Model):
     _name="food.delivery"
     _description="This model is used to create a food order in our local city"
     _inherit= ['mail.thread','mail.activity.mixin']
-    _order = "name"
+    _order = "id"
 
 
     name=fields.Char(" food product",related="menu_item_ids.name",required=True)
@@ -24,7 +24,7 @@ class foodDelivery(models.Model):
         selection=[('new','New'),('order_created','Order Created'),('order_recieved','Ordered Recieved'),('cancel','Cancelled')],default="new",tracking=True)
     restaurant_name_id = fields.Many2one('restaurant.name',string="Restaurant Name")
     menu_item_ids = fields.Many2many('food.product', string="Food Menu")
-    cusine_style_ids=fields.Many2one('cusine.style',string="Cusine Style")
+    cusine_style_ids=fields.Many2many('cusine.style',string="Cusine Style")
     # product_category_id=fields.Many2one('food.product.category',related=".name",string="Food Category")
     # user_details_ids=fields.One2many('user.details','customer_details_id')
     delivery_boy_id=fields.Many2one('res.users',string="Delivery Boy",default=lambda self:self.env.user)
@@ -43,6 +43,11 @@ class foodDelivery(models.Model):
             else:
                 record.state="cancel"
         return True
-
+    
+    @api.model_create_multi
+    def create(self,vals):
+        record=self.env['food.delivery']
+        record.state="order_created"
+        return super().create(vals) 
 
 

@@ -8,5 +8,6 @@ class cusineStyle(models.Model):
     _order="name"
 
     name=fields.Char('Name',required=True)
+    color=fields.Integer()
 
     _sql_constraints=[('cusine_style_unique','unique(name)','Cusine style must be unique')]

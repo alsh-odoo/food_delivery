@@ -5,6 +5,7 @@
         <field name="name">Order Food</field>
         <field name="res_model">food.delivery</field>
         <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_avilable_filter':True}</field>
     </record>
     <record id ="restaurant_name_action" model="ir.actions.act_window">
         <field name="name">Restaurant Name</field>

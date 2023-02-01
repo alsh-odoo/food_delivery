@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- ___________________cusine Style Demo Data___________________________ -->
+        <record id="cusine_style_demo_1" model="cusine.style">
+            <field name="name">North Indian</field>
+        </record>
+        <record id="cusine_style_demo_2" model="cusine.style">
+            <field name="name">South Indian</field>
+        </record>
+        <record id="cusine_style_demo_3" model="cusine.style">
+            <field name="name">Punjabi</field>
+        </record>
+        <record id="cusine_style_demo_4" model="cusine.style">
+            <field name="name">Chinese</field>
+        </record>
+
+
+<!-- ________________food Product Demo Data_______________________________________ -->
+        <record id="food_product_demo_1" model="food.product">
+            <field name="name">Punjabi Thali</field>
+            <field name="price">130</field>
+        </record>
+        <record id="food_product_demo_2" model="food.product">
+            <field name="name">Burger</field>
+            <field name="price">99</field>
+        </record>
+        <record id="food_product_demo3" model="food.product">
+            <field name="name">Margarita Pizza</field>
+            <field name="price">150</field>
+        </record>
+    </data>
+   
+</odoo>
